@@ -1,0 +1,28 @@
+<!-- 
+<ul>
+  <li *ngFor="let repo of repositories$ | async">
+    {{ repo.name }}
+    {{ repo.forks_count }}
+    {{ repo.stargazers_count }}
+    {{ repo.pushed_at }}
+  </li>
+</ul>
+ -->
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Forked</th>
+      <th scope="col">Stars</th>
+      <th scope="col">Update</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let repo of repositories$ | async">
+      <td>{{ repo.name }}</td>
+      <td>{{ repo.forks_count > 0 }}</td>
+      <td>{{ repo.stargazers_count }}</td>
+      <td>{{ repo.pushed_at }}</td>
+    </tr>
+  </tbody>
+</table>

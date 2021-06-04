@@ -1,0 +1,149 @@
+<h5 class="mt-3">Top Contributors</h5>
+<hr/>
+<div class="row mx-3">
+  <div class="col-12 col-md-6 col-lg-4 col-xl-3 my-3" *ngFor="let contributor of dataList">
+    <div class="card h-100">
+      <div class="card-body">
+        <div class="row mb-2">
+          <div class="col-4">
+            <img class="card-img-top bg-light p-1" src={{contributor.avatar_url}} alt="Card image cap">
+          </div>
+          <div class="col-4 p-0 d-flex align-items-end">
+            <p class="text-muted mb-0">@github</p>
+          </div>
+          <div class="col-4 d-flex justify-content-end">
+            <i class="fa fa-2x fa-crosshairs"></i>
+          </div>
+        </div>
+        <div class="row">
+          <h6 class="card-title fw-bold mb-0">{{contributor.login}}</h6>
+          <p class="card-text text-muted fs-6">{{contributor.contributions}} commits</p>
+          <div class="col-12 text-center">
+            <button [routerLink]="['repositories/' + contributor.login]" class="btn btn-outline-primary btn-sm border-2">VIEW REPOSITORIES</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <ion-content>
+  <div class="row mx-3">
+    <div class="col-12 col-md-6 col-lg-4 col-xl-3 my-3" *ngFor="let contributor of dataList">
+      <div class="card h-100">
+        <div class="card-body">
+          <div class="row mb-2">
+            <div class="col-4">
+              <img class="card-img-top bg-light p-1" src={{contributor.avatar_url}} alt="Card image cap">
+            </div>
+            <div class="col-4 p-0 d-flex align-items-end">
+              <p class="text-muted mb-0">@github</p>
+            </div>
+            <div class="col-4 d-flex justify-content-end">
+              <i class="fa fa-2x fa-crosshairs"></i>
+            </div>
+          </div>
+          <div class="row">
+            <h6 class="card-title fw-bold mb-0">{{contributor.login}}</h6>
+            <p class="card-text text-muted fs-6">{{contributor.contributions}} commits</p>
+            <div class="col-12 text-center">
+              <a href="#" class="btn btn-outline-primary btn-sm border-2">VIEW REPOSITORIES</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+
+</ion-content> -->
+
+<!-- <ion-content [fullscreen]="true" class="ion-padding">
+
+  <ion-list>
+    <ion-list-header>
+      Employee List
+    </ion-list-header>
+
+    <ion-item *ngFor="let item of items">
+      <ion-avatar slot="start">
+        <img src="{{item.avatar_url}}">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{item.avatar_url}}</h2>
+        <h3>{{item.login}}</h3>
+        <p>{{item.contributions}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+
+</ion-content> -->
+
+
+<!-- <ion-virtual-scroll [items]="contributors$">
+  <ion-item *virtualItem="let contributor">
+    <div class="card h-100">
+      <div class="card-body">
+        <div class="row mb-2">
+          <div class="col-4">
+            <img class="card-img-top bg-light p-1" src={{contributor.avatar_url}} alt="Card image cap">
+          </div>
+          <div class="col-4 p-0 d-flex align-items-end">
+            <p class="text-muted mb-0">@github</p>
+          </div>
+          <div class="col-4 d-flex justify-content-end">
+            <i class="fa fa-2x fa-crosshairs"></i>
+          </div>
+        </div>
+        <div class="row">
+          <h6 class="card-title fw-bold mb-0">{{contributor.login}}</h6>
+          <p class="card-text text-muted fs-6">{{contributor.contributions}} commits</p>
+          <div class="col-12 text-center">
+            <a href="#" class="btn btn-outline-primary btn-sm border-2">VIEW REPOSITORIES</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-item>
+</ion-virtual-scroll> -->
+
+
+<!-- <div class="row mx-3">
+  <div class="col-12 col-md-6 col-lg-4 col-xl-3 my-3" *ngFor="let contributor of contributors$ | async">
+    <div class="card h-100">
+      <div class="card-body">
+        <div class="row mb-2">
+          <div class="col-4">
+            <img class="card-img-top bg-light p-1" src={{contributor.avatar_url}} alt="Card image cap">
+          </div>
+          <div class="col-4 p-0 d-flex align-items-end">
+            <p class="text-muted mb-0">@github</p>
+          </div>
+          <div class="col-4 d-flex justify-content-end">
+            <i class="fa fa-2x fa-crosshairs"></i>
+          </div>
+        </div>
+        <div class="row">
+          <h6 class="card-title fw-bold mb-0">{{contributor.login}}</h6>
+          <p class="card-text text-muted fs-6">{{contributor.contributions}} commits</p>
+          <div class="col-12 text-center">
+            <a href="#" class="btn btn-outline-primary btn-sm border-2">VIEW REPOSITORIES</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
